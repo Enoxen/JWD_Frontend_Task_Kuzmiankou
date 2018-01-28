@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.3/js/all.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Istok+Web|Oswald|Raleway" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="#" class="logo_name">CinemaScore</a>
+            <div class="logo_image">
+                <div class="circles">
+                    <div class="move-circle1"><img src="img/move_circle1.png"></div>
+                    <div class="move-circle2"><img src="img/move_circle1.png"></div>
+                </div>
+                <div class="babina"><img src="img/babina.png" alt=""></div>
+            </div>
+        </div>
+        <ul class="nav_list">
+            <li><a href="#">Main</a></li>
+            <li><a href="#">Top 25</a></li>
+            <li><a href="#">Catalog</a></li>
+            <li class="search">
+                <form role="search" method="get" id="searchform">
+                    <label class="search_label" for="s">
+                        <i class="fas fa-search"></i>
+                    </label>
+                    <input type="search" name="command" placeholder="search film..." id="s" value="">
+                </form>
+            </li>
+        </ul>
+        <button class="login">LogIn</button>
+    </nav>
+    <main>
+        <h1>FILL IN THE REGISTRATION FORM</h1>
+            <form role="form" method="post" class="registration">
+                <div class="input">
+                    <div class="labels">
+                    <label for="name">Your Name:</label>
+                        <label for="age">Your Age:</label>
+                    <label for="email">Your Email:</label>
+                        <label id="ee" for="extraemail">Second Email:</label>
+                    <label for="password">Your Password:</label>
+                </div>
+                <div class="inputs">
+                    <input type="text" name="login" placeholder="Login..." value="" id="name" requiered pattern="^[A-Za-z0-9_]{6,16}$" title="Latin letters, numbers, _, the first character is a Latin letter, the number of characters is not less than 5.">
+                    <input type="number" min="7" max="120" size="3" name="age" placeholder="Age..." value="" id="age" required>
+                    <input type="email" name="email" placeholder="Email..." value="" id="email" required>
+                    <input type="email" name="Extraemail" placeholder="Email..." value="" id="extraemail" class="hidden" required>
+                    <input type="password" name="password" placeholder="Password..." id="password" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$" title="at least 6 characters, at least one letter in each register and at least one number">
+                </div>
+                </div>
+                <div class="buttons">
+                    <input class="submit_button" type="submit" value="Submit">
+                    <input type="button" value="Add an email" id="add" class="add_email_button">
+                </div>
+            </form>
+            <p >If you already have an account - <span><a href="#">LogIn</a></span> </p>
+    </main>
+
+    <script>
+        let clicked = 0;
+            document.getElementById('add').onclick = function() {
+                if(clicked == 0) {
+                    clicked = 1;
+                    document.getElementById('extraemail').style.display = 'block';
+                    document.getElementById('ee').style.display = 'block';
+                    document.getElementById('add').value = "Delete Second email";
+                } else {
+                    clicked = 0;
+                    document.getElementById('extraemail').style.display = 'none';
+                    document.getElementById('ee').style.display = 'none';
+                    document.getElementById('add').value = "Add an email";
+                }
+            }
+    </script>
+
+</body>
+</html>
